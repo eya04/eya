@@ -117,7 +117,14 @@ function generateID() {
     ////////////////////////////////
     function showData(){
         each(clothesData,function(element,i){
-        $(".list").append(`<div class="listone"><img class="img" src=${element.image} ><div id="name"><div>${element.name}</div><div>${element.price}$</div><div>category: ${element.category}</div>div>categoryArticle: ${element.categoryArticle} </div></div><div>`)
+        $(".container").append(` <div class="product">
+        <img src=${element.image} >
+        <h2>${element.name} 6</h2>
+        <p>category:${element.category}</p>
+        <p></p>
+        <p>Price:${element.price}</p>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+        </div>`)
       })
     }
     showData()
