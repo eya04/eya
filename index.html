@@ -11,18 +11,28 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-        <h1 id="sh">Shopping Store</h1>
-    </header>
-    <div class="cata">
-        
-       <a href="clothes.html">Clothes</a><br>
-       <a href="Parfums.html">Parfums</a><br>
-       <a href="accessories.html">Accessories</a>
+  <nav>
+    <ul>
+        <li   onclick="parfum()">parfum</li>
+        <li onclick="accesoire()">accesoire</li>
+        <li onclick="clothes">clothes</li>
+        <button onclick="CreateNewCard()">CreateNewCard</button>
+        <div><input type="text"   placeholder="search"  id="search"><button  onclick="searched()">Search</button></div>
+    </ul>
+  </nav>
+        <div class="container"></div>
+        <div class="parfum"></div>
+        <div class="searched"></div>
+       
+        <div class ="create">
+            <p><input id="name" placeholder="Enter Name For Your Product"   class="w3-input w3-hover-green" type="text"/></p>
+            <p><input id="picture"  placeholder="Enter Picture" class="w3-input w3-border w3-hover-red" type="text"/></p>
+            <p><input id="price"  placeholder="Enter Price" class="w3-input w3-border w3-hover-blue" type="text"/></p>
+            <p><input id="category"  placeholder="Enter category" class="w3-input w3-border w3-hover-blue" type="text"/></p>
+            
+            <button  onclick="addToCard()">Add to card</button>
+            </div>
     
-    </div>
-        <div class="container">
-  </div>
   <script
   src="https://code.jquery.com/jquery-3.7.1.js"
   integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
