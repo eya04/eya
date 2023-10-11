@@ -1,3 +1,4 @@
+
 function generateID() {
     var count = 0;
     return function () {
@@ -159,7 +160,7 @@ function generateID() {
 
 
     
-////////////////////////////////////
+
 
     function each(array, func) { 
         for (var i = 0; i < array.length; i++) { 
@@ -197,3 +198,13 @@ function generateID() {
       });
       return acc;
       }
+
+var counter=0
+var initial=$('#test')
+initial.on('click',function(){
+  counter++
+$('#test')[0].src=item1.images[counter]
+  if(counter===item1.images.length-1){
+    counter=-1
+  }
+})
