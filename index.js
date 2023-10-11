@@ -90,7 +90,7 @@ function generateID() {
       },
       {
         "id": id(),
-        "name": "Scarf",
+        "name":"Scarf",
         "price": 29,
         "category": "women",
         "categoryArticle":"accesoire",
@@ -98,7 +98,7 @@ function generateID() {
       },
       {
         "id": id(),
-        "name": "cap",
+        "name":"cap",
         "price": 18,
         "category": "men",
         "categoryArticle":"accesoire",
@@ -106,7 +106,7 @@ function generateID() {
       },
       {
         "id": id(),
-        "name": "Purse",
+        "name":"Purse",
         "price": 15.99,
         "category": "men",
         "categoryArticle":"accesoire",
@@ -119,11 +119,11 @@ function generateID() {
         each(clothesData,function(element,i){
         $(".container").append(` <div class="product">
         <img src=${element.image} >
-        <h2>${element.name} 6</h2>
+        <h2>${element.name}</h2>
         <p>category:${element.category}</p>
         <p></p>
         <p>Price:${element.price}$</p>
-        <button class="btn" onclick="addToCart(${element.name},${element.price})">Add to Cart</button>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
         </div>`)
       })
     }
@@ -134,7 +134,8 @@ function generateID() {
     var cartTotal = 0;
 
     function addToCart(productName, productPrice) {
-        cart.push({name: productName, price: productPrice });
+      console.log(productName)
+        cart.push({"name":productName,"price":productPrice });
         cartTotal += productPrice;
         updateCartDisplay();
     }
@@ -153,7 +154,8 @@ function generateID() {
 
     function checkout() {
         alert('Votre total:' + cartTotal+'$');
-        updateCartDisplay()}
+        updateCartDisplay()
+      }
 
 
 
