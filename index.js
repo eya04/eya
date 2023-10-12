@@ -123,30 +123,41 @@ function generateID() {
         <img src=${element.image} >
         <h2>${element.name}</h2>
         <p>category:${element.category}</p>
-        <p></p>
         <p>Price:${element.price}$</p>
-        <button class="btn" onclick="addToCart(${element.name},${element.price})">Add to Cart</button>
+        <button class="btn" onclick="addToCart(${element.price})">Add to Cart</button>
         </div>`)
       })
+      console.log(clothesData)
     }
     showData()
-    function addToCart(productName, productPrice) {
-      console.log(productName);
-        cart.push({"name":productName,"price":productPrice });
+//////////////////////////////////
+    var cart = [];
+    var cartTotal = 0;
+    function addToCart(productPrice) {
+        cart.push({"price":productPrice });
         cartTotal += productPrice;
         updateCartDisplay();
     }
+    function updateCartDisplay() {
+      var cartList = document.getElementById('cart-list');
+      var cartTotalElement = document.getElementById('cart-total');
+      cartList.innerHTML = '';
+      cart.forEach(function (product) {
+          var li = document.createElement('li');
+          li.textContent = product.name + ' $' + product.price;
+          cartList.append(li);
+      });
+      cartTotalElement.textContent = cartTotal;
+  }
 
-    
-
-
-
+  function checkout() {
+      alert('Votre total:' + cartTotal+'$');
+      updateCartDisplay()}
     ////////////////////////////////////search//////////////////////////////////////////////////////
-
 function searched(){
 var search=$("#search").val()
 each(clothesData,function(element,i){
-  if(element.category===search || element.name===search  ){
+  if(element.category===search || element.name===search ){
    console.log(element)
   $(".container").hide()
   $(".searched").append(` <div class="product">
@@ -161,8 +172,6 @@ each(clothesData,function(element,i){
 })
 }
 ////////////////////////////////////////////addnewcard/////////////////////
-
-
 function CreateNewCard(){
   $(".container").hide()
 $(".create").show()
@@ -174,21 +183,12 @@ var image=$("#picture").val()
 var price=$("#price").val()
 var category=$("#category").val()
 clothesData.push({name:names,image:image,price:price,category:category,categoryArticle:"categoryArticle"})
-
   $(".create").hide()
   $(".container").show()
   showData()
 }
- 
- 
-
-
-
-
-
-
 //////////////////////////////////////////////////filterByCategory///////////////////////////////////
-    function parfum(){
+function parfum(){
   each(clothesData,function(element,i){
      if(element.categoryArticle==="parfum"){
       console.log(element)
@@ -202,7 +202,6 @@ clothesData.push({name:names,image:image,price:price,category:category,categoryA
      <button class="btn" onclick="addToCart()">Add to Cart</button>
      </div>`)
      }
-
   })
 
     }
@@ -226,8 +225,7 @@ clothesData.push({name:names,image:image,price:price,category:category,categoryA
         }
  
 ///////////////////////////////helpFunction////////////////////////////
-
-    function each(array, func) { 
+function each(array, func) { 
         for (var i = 0; i < array.length; i++) { 
               func(array[i], i); 
         } 
@@ -264,17 +262,5 @@ clothesData.push({name:names,image:image,price:price,category:category,categoryA
       return acc;
       }
 
-// var counter=0
-// var initial=$('#test')
-// initial.on('click',function(){
-//   counter++
-// $('#test')[0].src=item1.images[counter]
-//   if(counter===item1.images.length-1){
-//     counter=-1
-//   }
-// })
 
 
-function  aa(){
-  console.log(heeee)
-}
