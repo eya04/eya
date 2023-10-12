@@ -176,8 +176,7 @@ function CreateNewCard(){
   $(".container").hide()
 $(".create").show()
 }
-
-
+//
 function addNewCard(){
   var names=$('#name').val()
 var image=$("#picture").val()
@@ -205,14 +204,11 @@ function parfum(){
      }
   })
 
-
     }
-
-function accesoire(){
-    each(clothesData,function(element,i){
-       if(element.categoryArticle==="accesoire"){
-          console.log(element)
-
+    //////////
+    function accesoire(){
+      each(clothesData,function(element,i){
+         if(element.categoryArticle==="accesoire"){
          $(".container").hide()
          $(".accesoire").append(` <div class="product">
          <img src=${element.image} >
@@ -223,30 +219,11 @@ function accesoire(){
          <button class="btn" onclick="addToCart()">Add to Cart</button>
          </div>`)
          }
+    
       })
     
-      }
+        }
  
-
-      })   
-}
-function clothes(){
-  each(clothesData,function(element,i){
-     if(element.categoryArticle==="clothes"){
-        console.log(element)
-       $(".container").hide()
-       $(".clothes").append(` <div class="product">
-       <img src=${element.image} >
-       <h2>${element.name}</h2>
-       <p>category:${element.category}</p>
-       <p></p>
-       <p>Price:${element.price}</p>
-       <button class="btn" onclick="addToCart()">Add to Cart</button>
-       </div>`)
-       }
-    })   
-}
-
 ///////////////////////////////helpFunction////////////////////////////
 function each(array, func) { 
         for (var i = 0; i < array.length; i++) { 
@@ -284,7 +261,6 @@ function each(array, func) {
       });
       return acc;
       }
-
 
 
 
