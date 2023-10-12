@@ -82,6 +82,7 @@ height: 50px;
     margin-top: 20px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 h1{
     background-color: #b5a992;
     margin-left: 500px;
@@ -89,6 +90,9 @@ h1{
     text-align: center;
 margin-top: 0px;
 =======
+=======
+
+>>>>>>> c234e883ec0fc8c76bb97982d173444a41b2d99c
 
 body{
     background-color: #c29999;
@@ -140,5 +144,9 @@ h1{
 }
 .navbar li{
     color: white;
+<<<<<<< HEAD
 >>>>>>> 579e1fda0c8831b3ad7acca7f64412ac4233be1d
+=======
+
+>>>>>>> c234e883ec0fc8c76bb97982d173444a41b2d99c
 }
