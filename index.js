@@ -114,51 +114,30 @@ function generateID() {
       }
      
     ]
-////////////showData//////////////
-function showData(){
-  $(".create").hide()
-    each(clothesData,function(element,i){
-    $(".container").append(` <div class="product">
-    <img src=${element.image} >
-    <h2>${element.name}</h2>
-    <p>category:${element.category}</p>
-    <p></p>
-    <p>Price:${element.price}$</p>
-    <button class="btn" onclick="addToCart(${element.name},${element.price})">Add to Cart</button>
-    </div>`)
-  })
-}
-showData()
-    ////////////////////////////////addTocart/////////////////
 
-    var cart = [];
-    var cartTotal = 0;
-    
+    ////////////////////////////////showData/////////////////
+    function showData(){
+      $(".create").hide()
+        each(clothesData,function(element,i){
+        $(".container").append(` <div class="product">
+        <img src=${element.image} >
+        <h2>${element.name}</h2>
+        <p>category:${element.category}</p>
+        <p></p>
+        <p>Price:${element.price}$</p>
+        <button class="btn" onclick="addToCart(${element.name},${element.price})">Add to Cart</button>
+        </div>`)
+      })
+    }
+    showData()
     function addToCart(productName, productPrice) {
       console.log(productName);
         cart.push({"name":productName,"price":productPrice });
         cartTotal += productPrice;
         updateCartDisplay();
     }
-   
 
-    function updateCartDisplay() {
-        var cartList = document.getElementById('cart-list');
-        var cartTotalElement = document.getElementById('cart-total');
-        cartList.innerHTML = '';
-        cart.forEach(function (product) {
-            var li = document.createElement('li');
-            console.log(product)
-            li.textContent = product.name + '$' + product.price;
-            cartList.append(li);
-        });
-        cartTotalElement.textContent = cartTotal;
-    }
-
-    function checkout() {
-        alert('Votre total:' + cartTotal+'$');
-        updateCartDisplay()
-      }
+    
 
 
 
@@ -241,11 +220,6 @@ clothesData.push({name:names,image:image,price:price,category:category,categoryA
         }
       })
     }
-
-    
-///////////////
-  
-
 
 
 
