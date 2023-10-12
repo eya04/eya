@@ -11,7 +11,7 @@ function generateID() {
       "id": id(),
       "name": "robe",
       "price": 120,
-      "category": "women",
+      "category" :"women",
       "categoryArticle":"clothes",
       "image": "https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/19473744/2022/9/13/5b4fc687-b93b-4141-aeb6-1bd82db75e671663054576612-Antheaa-Women-Dresses-631663054576038-1.jpg"
     },
@@ -115,6 +115,12 @@ function generateID() {
      
     ]
     ////////////////////////////////
+    function addToCart(productName, productPrice) {
+      console.log(productName);
+        cart.push({"name":productName,"price":productPrice });
+        cartTotal += productPrice;
+        updateCartDisplay();
+    }
     function showData(){
         each(clothesData,function(element,i){
         $(".container").append(` <div class="product">
@@ -123,22 +129,17 @@ function generateID() {
         <p>category:${element.category}</p>
         <p></p>
         <p>Price:${element.price}$</p>
-        <button class="btn" onclick="addToCart()">Add to Cart</button>
+        <button class="btn" onclick="addToCart(${element.name},${element.price})">Add to Cart</button>
         </div>`)
       })
     }
     showData()
 
+    
 
     var cart = [];
     var cartTotal = 0;
 
-    function addToCart(productName, productPrice) {
-      console.log(productName)
-        cart.push({"name":productName,"price":productPrice });
-        cartTotal += productPrice;
-        updateCartDisplay();
-    }
     function updateCartDisplay() {
         var cartList = document.getElementById('cart-list');
         var cartTotalElement = document.getElementById('cart-total');
