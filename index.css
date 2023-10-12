@@ -96,3 +96,10 @@ height: 50px;
     border-radius: 5px;
     margin-top: 20px;
 }
+h1{
+    background-color: #b5a992;
+    margin-left: 500px;
+    display:flex;
+    text-align: center;
+margin-top: 0px;
+}

@@ -166,14 +166,8 @@ each(clothesData,function(element,i){
 function CreateNewCard(){
   $(".container").hide()
 $(".create").show()
-
-
-
-
 }
-
-
-
+//
 function addNewCard(){
   var names=$('#name').val()
 var image=$("#picture").val()
@@ -215,11 +209,21 @@ clothesData.push({name:names,image:image,price:price,category:category,categoryA
     //////////
     function accesoire(){
       each(clothesData,function(element,i){
-        if(element.categoryArticle==="accesoire"){
-          
-        }
+         if(element.categoryArticle==="accesoire"){
+         $(".container").hide()
+         $(".accesoire").append(` <div class="product">
+         <img src=${element.image} >
+         <h2>${element.name}</h2>
+         <p>category:${element.category}</p>
+         <p></p>
+         <p>Price:${element.price}</p>
+         <button class="btn" onclick="addToCart()">Add to Cart</button>
+         </div>`)
+         }
+    
       })
-    }
+    
+        }
  
 ///////////////////////////////helpFunction////////////////////////////
 
