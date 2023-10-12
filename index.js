@@ -114,6 +114,7 @@ function generateID() {
       }
      
     ]
+    ////////////////////////////////showData/////////////////
     ////////////////////////////////
     function addToCart(productName, productPrice) {
       console.log(productName);
@@ -122,6 +123,7 @@ function generateID() {
         updateCartDisplay();
     }
     function showData(){
+      $(".create").hide()
         each(clothesData,function(element,i){
         $(".container").append(` <div class="product">
         <img src=${element.image} >
@@ -159,6 +161,87 @@ function generateID() {
       }
 
 
+    ////////////////////////////////////search//////////////////////////////////////////////////////
+
+function searched(){
+var search=$("#search").val()
+each(clothesData,function(element,i){
+  if(element.category===search || element.name===search  ){
+   console.log(element)
+  $(".container").hide()
+  $(".searched").append(` <div class="product">
+  <img src=${element.image} >
+  <h2>${element.name}</h2>
+  <p>category:${element.category}</p>
+  <p></p>
+  <p>Price:${element.price}</p>
+  <button class="btn" onclick="addToCart()">Add to Cart</button>
+  </div>`)
+  }
+})
+}
+////////////////////////////////////////////addnewcard/////////////////////
+
+
+function CreateNewCard(){
+  $(".container").hide()
+$(".create").show()
+
+
+
+
+}
+
+
+
+function addToCard(){
+  var names=$('#name').val()
+var image=$("#picture").val()
+var price=$("#price").val()
+var category=$("#category").val()
+clothesData.push({name:names,image:image,price:price,category:category,categoryArticle:"categoryArticle"})
+
+  $(".create").hide()
+  $(".container").show()
+  showData()
+}
+ 
+ 
+
+
+
+
+
+
+//////////////////////////////////////////////////filterByCategory///////////////////////////////////
+    function parfum(){
+  each(clothesData,function(element,i){
+     if(element.categoryArticle==="parfum"){
+      console.log(element)
+     $(".container").hide()
+     $(".parfum").append(` <div class="product">
+     <img src=${element.image} >
+     <h2>${element.name}</h2>
+     <p>category:${element.category}</p>
+     <p></p>
+     <p>Price:${element.price}</p>
+     <button class="btn" onclick="addToCart()">Add to Cart</button>
+     </div>`)
+     }
+
+  })
+
+    }
+    //////////
+    function accesoire(){
+      each(clothesData,function(element,i){
+        if(element.categoryArticle==="accesoire"){
+          
+        }
+      })
+    }
+
+
 
 
 
@@ -196,7 +279,7 @@ function generateID() {
 
 
     
-
+///////////////////////////////helpFunction////////////////////////////
 
     function each(array, func) { 
         for (var i = 0; i < array.length; i++) { 
@@ -235,12 +318,12 @@ function generateID() {
       return acc;
       }
 
-var counter=0
-var initial=$('#test')
-initial.on('click',function(){
-  counter++
-$('#test')[0].src=item1.images[counter]
-  if(counter===item1.images.length-1){
-    counter=-1
-  }
-})
+// var counter=0
+// var initial=$('#test')
+// initial.on('click',function(){
+//   counter++
+// $('#test')[0].src=item1.images[counter]
+//   if(counter===item1.images.length-1){
+//     counter=-1
+//   }
+// })

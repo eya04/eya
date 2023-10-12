@@ -53,6 +53,41 @@ a{
     align-items: center;
     justify-content: space-around;
 }
+nav {
+background-color: #eea3a3;
+height: 70px;
+justify-content: center;
+
+}
+ul{
+display: flex;
+flex-direction: row;
+gap:200px;
+
+
+
+}
+li{
+margin-top: 10px;
+font-size: larger;
+color: #8f5520;
+
+
+}
+input{
+
+border: solid coral;
+height: 40px;
+
+
+}
+button{
+
+background-color: #dea065;
+height: 50px;
+
+
+
 .cart {
     background-color: #fff;
     padding: 20px;
