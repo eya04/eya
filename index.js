@@ -11,7 +11,7 @@ function generateID() {
       "id": id(),
       "name": "robe",
       "price": 120,
-      "category": "women",
+      "category" :"women",
       "categoryArticle":"clothes",
       "image": "https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/19473744/2022/9/13/5b4fc687-b93b-4141-aeb6-1bd82db75e671663054576612-Antheaa-Women-Dresses-631663054576038-1.jpg"
     },
@@ -90,7 +90,7 @@ function generateID() {
       },
       {
         "id": id(),
-        "name": "Scarf",
+        "name":"Scarf",
         "price": 29,
         "category": "women",
         "categoryArticle":"accesoire",
@@ -98,7 +98,7 @@ function generateID() {
       },
       {
         "id": id(),
-        "name": "cap",
+        "name":"cap",
         "price": 18,
         "category": "men",
         "categoryArticle":"accesoire",
@@ -106,7 +106,7 @@ function generateID() {
       },
       {
         "id": id(),
-        "name": "Purse",
+        "name":"Purse",
         "price": 15.99,
         "category": "men",
         "categoryArticle":"accesoire",
@@ -114,21 +114,52 @@ function generateID() {
       }
      
     ]
-    ////////////////////////////////showData/////////////////
-    function showData(){
-      $(".create").hide()
-        each(clothesData,function(element,i){
-        $(".container").append(` <div class="product">
-        <img src=${element.image} >
-        <h2>${element.name}</h2>
-        <p>category:${element.category}</p>
-        <p></p>
-        <p>Price:${element.price}</p>
-        <button class="btn" onclick="addToCart()">Add to Cart</button>
-        </div>`)
-      })
+////////////showData//////////////
+function showData(){
+  $(".create").hide()
+    each(clothesData,function(element,i){
+    $(".container").append(` <div class="product">
+    <img src=${element.image} >
+    <h2>${element.name}</h2>
+    <p>category:${element.category}</p>
+    <p></p>
+    <p>Price:${element.price}$</p>
+    <button class="btn" onclick="addToCart(${element.name},${element.price})">Add to Cart</button>
+    </div>`)
+  })
+}
+showData()
+    ////////////////////////////////addTocart/////////////////
+
+    var cart = [];
+    var cartTotal = 0;
+    
+    function addToCart(productName, productPrice) {
+      console.log(productName);
+        cart.push({"name":productName,"price":productPrice });
+        cartTotal += productPrice;
+        updateCartDisplay();
     }
-    showData()
+   
+
+    function updateCartDisplay() {
+        var cartList = document.getElementById('cart-list');
+        var cartTotalElement = document.getElementById('cart-total');
+        cartList.innerHTML = '';
+        cart.forEach(function (product) {
+            var li = document.createElement('li');
+            console.log(product)
+            li.textContent = product.name + '$' + product.price;
+            cartList.append(li);
+        });
+        cartTotalElement.textContent = cartTotal;
+    }
+
+    function checkout() {
+        alert('Votre total:' + cartTotal+'$');
+        updateCartDisplay()
+      }
+
 
 
     ////////////////////////////////////search//////////////////////////////////////////////////////
@@ -164,7 +195,7 @@ $(".create").show()
 
 
 
-function addToCard(){
+function addNewCard(){
   var names=$('#name').val()
 var image=$("#picture").val()
 var price=$("#price").val()
@@ -210,6 +241,11 @@ clothesData.push({name:names,image:image,price:price,category:category,categoryA
         }
       })
     }
+
+    
+///////////////
+  
+
 
 
 
