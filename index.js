@@ -114,14 +114,8 @@ function generateID() {
       }
      
     ]
+
     ////////////////////////////////showData/////////////////
-    ////////////////////////////////
-    function addToCart(productName, productPrice) {
-      console.log(productName);
-        cart.push({"name":productName,"price":productPrice });
-        cartTotal += productPrice;
-        updateCartDisplay();
-    }
     function showData(){
       $(".create").hide()
         each(clothesData,function(element,i){
@@ -136,29 +130,15 @@ function generateID() {
       })
     }
     showData()
+    function addToCart(productName, productPrice) {
+      console.log(productName);
+        cart.push({"name":productName,"price":productPrice });
+        cartTotal += productPrice;
+        updateCartDisplay();
+    }
 
     
 
-    var cart = [];
-    var cartTotal = 0;
-
-    function updateCartDisplay() {
-        var cartList = document.getElementById('cart-list');
-        var cartTotalElement = document.getElementById('cart-total');
-        cartList.innerHTML = '';
-        cart.forEach(function (product) {
-            var li = document.createElement('li');
-            console.log(product)
-            li.textContent = product.name + '$' + product.price;
-            cartList.append(li);
-        });
-        cartTotalElement.textContent = cartTotal;
-    }
-
-    function checkout() {
-        alert('Votre total:' + cartTotal+'$');
-        updateCartDisplay()
-      }
 
 
     ////////////////////////////////////search//////////////////////////////////////////////////////
@@ -194,7 +174,7 @@ $(".create").show()
 
 
 
-function addToCard(){
+function addNewCard(){
   var names=$('#name').val()
 var image=$("#picture").val()
 var price=$("#price").val()
