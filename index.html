@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    <header>
-        <h1 id="sh">Shopping Store</h1>
-    </header>
-    <div class="cata">
-        
-       <a href="clothes.html">Clothes</a><br>
-       <a href="Parfums.html">Parfums</a><br>
-       <a href="accessories.html">Accessories</a>
-    
+<body >
+    <h1>Jumia shop</h1>
+  <nav class="navbar">
+    <ul>
+        <li onclick="parfum()">Parfum</li>
+        <li onclick="accesoire()">Accesoire</li>
+        <li onclick="clothes()">Clothes</li>
+        <button id="bt" onclick="CreateNewCard()">CreateNewCard</button>
+        <div class="search-buttun"><input type="text"  placeholder="search"  id="search">
+        <button  id="se" onclick="searched()">Search</button>
     </div>
-        <div class="container">
-  </div>
+    </ul>
+</nav>
+<div class="container">
+</div>
+        <div class="parfum"></div>
+        <div class="accesoire"></div>
+        <div class="clothes"></div>
+        <div class="searched"></div>
+       
+        <div class ="create">
+            <p><input id="name" placeholder="Enter Name For Your Product"   class="w3-input w3-hover-green" type="text"/></p>
+            <p><input id="picture"  placeholder="Enter Picture" class="w3-input w3-border w3-hover-red" type="text"/></p>
+            <p><input id="price"  placeholder="Enter Price" class="w3-input w3-border w3-hover-blue" type="text"/></p>
+            <p><input id="category"  placeholder="Enter category" class="w3-input w3-border w3-hover-blue" type="text"/></p>
+            <button  onclick="addNewCard()">Add to card</button>
+            </div>
+    
     <div class="cart">
         <h2>Shopping Cart</h2>
         <ul id="cart-list">
