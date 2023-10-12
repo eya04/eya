@@ -115,12 +115,7 @@ function generateID() {
      
     ]
     ////////////////////////////////
-    function addToCart(productName, productPrice) {
-      console.log(productName);
-        cart.push({"name":productName,"price":productPrice });
-        cartTotal += productPrice;
-        updateCartDisplay();
-    }
+    
     function showData(){
         each(clothesData,function(element,i){
         $(".container").append(` <div class="product">
@@ -139,7 +134,12 @@ function generateID() {
 
     var cart = [];
     var cartTotal = 0;
-
+  function addToCart(productName, productPrice) {
+      console.log(productName);
+        cart.push({"name":productName,"price":productPrice });
+        cartTotal += productPrice;
+        updateCartDisplay();
+    }
     function updateCartDisplay() {
         var cartList = document.getElementById('cart-list');
         var cartTotalElement = document.getElementById('cart-total');
@@ -157,46 +157,6 @@ function generateID() {
         alert('Votre total:' + cartTotal+'$');
         updateCartDisplay()
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
 
     function each(array, func) { 
         for (var i = 0; i < array.length; i++) { 
