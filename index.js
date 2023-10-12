@@ -176,7 +176,8 @@ function CreateNewCard(){
   $(".container").hide()
 $(".create").show()
 }
-/////////////////////////
+
+
 function addNewCard(){
   var names=$('#name').val()
 var image=$("#picture").val()
@@ -203,12 +204,15 @@ function parfum(){
      </div>`)
      }
   })
-}
-//////////
+
+
+    }
+
 function accesoire(){
     each(clothesData,function(element,i){
        if(element.categoryArticle==="accesoire"){
           console.log(element)
+
          $(".container").hide()
          $(".accesoire").append(` <div class="product">
          <img src=${element.image} >
@@ -219,6 +223,11 @@ function accesoire(){
          <button class="btn" onclick="addToCart()">Add to Cart</button>
          </div>`)
          }
+      })
+    
+      }
+ 
+
       })   
 }
 function clothes(){
@@ -237,6 +246,7 @@ function clothes(){
        }
     })   
 }
+
 ///////////////////////////////helpFunction////////////////////////////
 function each(array, func) { 
         for (var i = 0; i < array.length; i++) { 
@@ -275,12 +285,6 @@ function each(array, func) {
       return acc;
       }
 
-// var counter=0
-//  var initial=$('#test')
-//  initial.on('click',function(){
-//   counter++
-// $('#test')[0].src=item1.images[counter]
-//    if(counter===item1.images.length-1){
-//      counter=-1
-//    }
-//  })
+
+
+
