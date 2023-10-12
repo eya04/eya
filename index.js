@@ -220,45 +220,7 @@ clothesData.push({name:names,image:image,price:price,category:category,categoryA
         }
       })
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+ 
 ///////////////////////////////helpFunction////////////////////////////
 
     function each(array, func) { 
@@ -307,3 +269,7 @@ clothesData.push({name:names,image:image,price:price,category:category,categoryA
 //     counter=-1
 //   }
 // })
+
+
+
+// iheb is here
