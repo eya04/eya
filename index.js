@@ -202,6 +202,14 @@ clothesData.push({name:names,image:image,price:price,category:category,categoryA
   })
 
     }
+    //////////
+    function accesoire(){
+      each(clothesData,function(element,i){
+        if(element.categoryArticle==="accesoire"){
+          
+        }
+      })
+    }
 
 
 
