@@ -271,5 +271,6 @@ clothesData.push({name:names,image:image,price:price,category:category,categoryA
 // })
 
 
-
-// iheb is here
+function  aa(){
+  console.log(heeee)
+}
