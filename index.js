@@ -124,35 +124,67 @@ function generateID() {
         <h2>${element.name}</h2>
         <p>category:${element.category}</p>
         <p>Price:${element.price}$</p>
-        <button class="btn" onclick="addToCart(${element.price})">Add to Cart</button>
+        <button class="btn" onclick="addToCart(${element.id})">Add to Cart</button>
         </div>`)
       })
-      console.log(clothesData)
+     
     }
     showData()
 //////////////////////////////////
     var cart = [];
     var cartTotal = 0;
-    function addToCart(productPrice) {
-        cart.push({"price":productPrice });
-        cartTotal += productPrice;
-        updateCartDisplay();
-    }
-    function updateCartDisplay() {
-      var cartList = document.getElementById('cart-list');
-      var cartTotalElement = document.getElementById('cart-total');
-      cartList.innerHTML = '';
-      cart.forEach(function (product) {
-          var li = document.createElement('li');
-          li.textContent = product.name + ' $' + product.price;
-          cartList.append(li);
-      });
-      cartTotalElement.textContent = cartTotal;
-  }
+function addToCart(id){
+  each(clothesData,function(element,i){
+if(element.id===id){
+  cart.push(element)
+}
+calculed()
 
-  function checkout() {
-      alert('Votre total:' + cartTotal+'$');
-      updateCartDisplay()}
+
+
+$("#priceall").text(total+"$")
+  })
+}
+
+
+function panier(){
+
+  $(".create").hide()
+  $(".container").hide()
+  each(cart,function(element,i){
+$(".panier").append(`<div class="product">
+<img   src=${element.image} >
+<h2>${element.name}</h2>
+<p>category:${element.category}</p>
+<p>Price:${element.price}$</p>
+
+</div>`)
+
+  })
+
+
+}
+
+var total=0
+function calculed(){
+  
+ return reduce (cart,function(acc,element){
+    return total=acc+element.price
+  
+
+
+ },0)
+
+
+
+
+
+}
+
+
+
+
+
     ////////////////////////////////////search//////////////////////////////////////////////////////
 function searched(){
 var search=$("#search").val()
@@ -166,7 +198,7 @@ each(clothesData,function(element,i){
   <p>category:${element.category}</p>
   <p></p>
   <p>Price:${element.price}</p>
-  <button class="btn" onclick="addToCart()">Add to Cart</button>
+  <button class="btn" onclick="addToCart(${element.id})">Add to Cart</button>
   </div>`)
   }
 })
@@ -199,7 +231,7 @@ function parfum(){
      <p>category:${element.category}</p>
      <p></p>
      <p>Price:${element.price}</p>
-     <button class="btn" onclick="addToCart()">Add to Cart</button>
+     <button class="btn" onclick="addToCart(${element.id})">Add to Cart</button>
      </div>`)
      }
   })
@@ -216,13 +248,30 @@ function parfum(){
          <p>category:${element.category}</p>
          <p></p>
          <p>Price:${element.price}</p>
-         <button class="btn" onclick="addToCart()">Add to Cart</button>
+         <button class="btn" onclick="addToCart(${element.id})">Add to Cart</button>
          </div>`)
          }
     
       })
     
         }
+        function clothes(){
+          each(clothesData,function(element,i){
+             if(element.categoryArticle==="clothes"){
+             $(".container").hide()
+             $(".clothes").append(` <div class="product">
+             <img src=${element.image} >
+             <h2>${element.name}</h2>
+             <p>category:${element.category}</p>
+             <p></p>
+             <p>Price:${element.price}</p>
+             <button class="btn" onclick="addToCart(${element.id})">Add to Cart</button>
+             </div>`)
+             }
+        
+          })
+        
+            }
  
 ///////////////////////////////helpFunction////////////////////////////
 function each(array, func) { 

@@ -56,7 +56,7 @@ justify-content: center;
 ul{
   display: flex;
   flex-direction: row;
-  gap:150px;
+  gap:120px;
 }
 li{
  margin-top: 10px;
@@ -81,18 +81,14 @@ height: 50px;
     border-radius: 5px;
     margin-top: 20px;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 h1{
     background-color: #b5a992;
     margin-left: 500px;
     display:flex;
     text-align: center;
 margin-top: 0px;
-=======
-=======
-
->>>>>>> c234e883ec0fc8c76bb97982d173444a41b2d99c
+}
 
 body{
     background-color: #c29999;
@@ -144,9 +140,15 @@ h1{
 }
 .navbar li{
     color: white;
-<<<<<<< HEAD
->>>>>>> 579e1fda0c8831b3ad7acca7f64412ac4233be1d
-=======
 
->>>>>>> c234e883ec0fc8c76bb97982d173444a41b2d99c
+}
+
+
+#priceall{
+
+font-size: x-large;
+
+}
+#all{
+    background-color: black;
 }
